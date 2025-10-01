@@ -1,0 +1,471 @@
+/* Aharon Nesbitt - CSS Sytle File 
+*
+*00: css variables
+*01: color
+*02: layout
+*03: typography
+*04: transition, animations selector practice
+*05: exploration
+*/ 
+/*00: css variables*/
+:root {
+    --color-body-bg: hsl(200, 27%, 96%);
+    --color-body-text: hsl(0, 38%, 23%);
+    --color-page1-text: hsl(101, 22%, 15%);
+    --color-page1-bg: hsla(0, 15%, 95%, 0.5);
+    --color-page2-text: hsl(90, 16%, 12%);
+    --color-page2-bg: hsl(309, 21%, 94%);
+    --color-page3-bg: hsl(120, 29%, 95%);
+    --color-page3-text: hsl(204, 23%, 17%);
+    --color-bottom-bar-bg: hsl(204, 56%, 60%);
+    --color-bottom-bar-text: hsl(0, 38%, 23%);
+    --sidebar-color: hsl(204, 26%, 81%);
+    --font1-font: 'Arial Black', Gadget, sans-serif;
+    --font2-font: 'Courier New', Courier, monospace;
+    --font3-font: 'Times New Roman', Times New Roman, serif;
+    --full-height: 100vh;
+    --full-width: 100vw;
+    --page-height: 25vh;
+    --page-width: 21%;
+    --page-top: 85%;
+    --bar-height: 5%;
+    --page-bottom: 15%;
+}
+
+/*01: color*/
+body {color: var(--color-body-text);
+background-color: var(--color-body-bg);
+font-family: var(--font2-font);
+}
+#zen-intro {color: var(--color-page2-text);
+background-color: var(--color-page2-bg);
+font-family: var(--font1-font);
+}
+#zen-summary {
+    color: var(--color-page2-text);
+    background-color: var(--color-page3-bg);
+    font-family: var(--font3-font);
+    font-size: 1ex;
+    
+}
+#zen-preamble {
+    color: var(--color-page1-text);
+    background-color: var(--color-page1-bg);
+    font-family: var(--font1-font);
+    font-size: 2ex;
+}
+#zen-supporting{
+    color: var(--color-page1-text);
+    background-color: var(--color-page2-bg);
+    font-family: var(--font2-font);
+    font-size: 3ex;
+    width: 50%;
+    height: 100px
+}
+.sidebar {
+    background-color: var(--sidebar-color);
+    color: var(--color-body-bg);
+    font-family: var(--font3-font);
+}
+h1, h4 {
+    color: var(--color-page1-text);
+    font-family: var(--font3-font);
+    font-size: 110 pt;
+}
+h2 {
+    color: var(--color-page3-text);
+    font-family: var(--font2-font);
+    font-size: 110 pt;
+}
+
+/*02: layout*/
+#zen-preamble {position: relative; 
+    top: 10px; 
+    left: 100px;
+    font-size: 1em;
+    font-family: var(--font2-font);
+    height: var(--page-height);
+    width: var(--page-width);
+}
+body {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.sidebar { 
+    position: absolute;
+    top: 20%;
+    right: -810px;
+    width: 400px;
+    font-family: var(--font1-font);
+    height: 500px;
+    text-align: center;
+    z-index: 1;
+    color: var(--color-sidebar-text);
+    background-color: var(--sidebar-color);
+}
+#zen-benefits {
+    float: right;
+    color: var(--color-page1-text);
+    background-color: var(--color-page1-bg);
+}
+p.zen-summary {
+    position: relative;
+    right: 100px;
+    top: 200px;
+    font-family: var(--font3-font);
+    height: var(--page-height);
+    width: var(--page-width);
+}
+
+/* layout2 */
+div.explanation, div.requirements, div.benefits, div.participation {
+    position: fixed;
+    width: var(--page-width);
+    top: var(--page-top);
+    height: var(--page-height);
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+    background-image: url(../img/newspaper2.jpg); height: auto;
+    font-size: medium;
+}
+
+div.explanation {
+    left: 1vw;
+    z-index: 1;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+
+}
+div.requirements {
+    left: 23vw;
+    z-index: 2;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+}
+div.benefits {
+    left: 45vw;
+    z-index: 3;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+}
+div.participation {
+    left: 67vw;
+    z-index: 4;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+    width: 30vw;
+}
+
+/* extra*/
+div.extra2 {
+    position: fixed;
+    left: 0;
+    top: var(--page-top);
+    right: 0;
+    width: 100%;
+    z-index: 6;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+    height: calc(var(--bar-height)*3);
+}
+div.extra1 {
+    position: fixed;
+    left: 30%;
+    bottom: 15%;
+    right: -100px;
+    width: 50%;
+    rotate: 30deg;
+    color: var(--color-page3-text);
+    background-image: url(../img/newspaper1.jpg);
+    background-size: cover;
+    height: 100vh;
+    top: 10vh;
+}
+section.intro{ 
+    position: relative;
+    rotate: -30deg;
+    z-index: 1;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+    height: 100vh;
+    width: 50vw;
+    left: 30%;
+    right: 0;
+    top: 10vh;
+}
+
+footer{ 
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    right: 10;
+    width: 100%;
+    z-index: 100;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+    height: var(--bar-height);
+}
+/* file*/
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3 {
+    margin: -2vh;
+    border: 3px solid black;
+    background-color: var(--color-body-bg);
+    font-size: small;
+    width: 180px;
+    padding: 2px;
+    z-index: 100;
+}
+
+/** 03: typography*/
+@font-face {
+    font-family: 'myfont';
+    src: url(../fonts/chunkfive.eot);
+}
+
+header h1{
+    font-family: 'myfont', Arial, sans-serif;
+    font-size: 1.05m;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+header h2 {
+    font-family: 'Bitcount Single Ink', cursive;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+#design-selection h3{ 
+    visibility: hidden;
+}
+#design-archives h3{
+    display: none;
+}
+#zen-resources h3{
+    display: none;
+}
+
+#design-selection { 
+    display: none;
+}
+#design-archives {
+    display: none;
+}
+#zen-resources {
+    display: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--color-page3-text);
+}
+
+div.explanation:active {
+    top: 10vh;
+    height:50%;
+    opacity: 1;
+    transition: 1s ease-in-out;
+    z-index: 100;
+}
+
+
+div.requirements:active {
+    top: 10vh;
+    height:50%;
+    transition: 1s ease-in-out;
+    z-index: 100;
+}
+
+div.benefits:active {
+    top: 14vh;
+    height:50%;
+    transition: 1s ease-in-out
+}
+div.participation:active {
+    top: 14vh;
+    height:50%;
+    transition: 1s ease-in-out
+}
+p::grammar-error {
+    background-color: yellow;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-style: wavy;
+}
+p::first-line {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.2em;
+} 
+p::transition {
+    transition: all 0.5s ease-in-out;
+}
+
+#design-archives h3:hover{
+    display: block;
+    z-index: 10;
+}
+#zen-resources h3:hover{
+    display: block;
+}
+
+#design-selection:hover{ 
+    display: block;
+}
+#design-archives:hover {
+    display: block;
+}
+#zen-resources:hover {
+    display: block;
+}
+p::nth-child(2n) {
+    color: red;
+}
+p::nth-child(2n+1) {
+    color: rgb(212, 204, 204);
+}
+h1{text-shadow: 2px 2px 5px rgb(98, 221, 27);}
+p:hover{
+    text-shadow: 2px 2px 5px rgb(36, 65, 168);
+}
+*:active {
+    text-shadow: 10px 10px 10px rgb(36, 65, 168);
+}
+
+div{
+    box-shadow: 5px 5px 5px grey;
+}
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3 {
+    border-radius: 100% 100% 10% 10%;
+    border-color: hsl(204, 13%, 8%);
+    border-style: solid;
+    padding-left: 10px;
+    
+}
+ul{
+    list-style-image: url("../img/star.png");
+}
+div.explanation {
+    border-image: url("../img/star.png");
+    height: auto;
+}
+* {
+    background: linear-gradient(to bottom, hsl(204, 28%, 66%), hsl(120, 29%, 95%));
+}
+
+section.intro h3 ~ p {
+    transition: 10s;
+}
+
+section.intro h3:hover ~ p {
+    transform: rotate(-100deg);
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+        opacity: 0.5;
+    }
+    to {
+        left: 50vw;
+        opacity: 1;
+    }
+}
+
+@keyframes change-color {
+    from {
+        color: hsl(22, 56%, 60%);
+    }
+    20% {
+        color: hsl(60, 73%, 49%);
+    }
+    40% {
+        color: hsl(120, 74%, 44%);
+    }
+    60% {
+        color: hsl(240, 74%, 44%);
+    }
+    80% {
+        color: hsl(300, 74%, 44%);
+    }
+    to {
+        color: hsl(0, 74%, 44%);
+    }
+}
+footer {
+    animation: slide-in 3s alternate infinite;
+}
+
+p {
+    animation: change-color 3s infinite running;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr) 100px;
+    gap: 10px;
+    border: 2px solid black;
+    grid-template-rows: auto 1fr auto;
+}
+
+aside.sidebar {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+    background-color: var(--sidebar-color);
+}
+
+div{
+  background-color:  hsla(200,50%,70%,0.3);
+}
+
+.wrapper {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100px  repeat(2, 1fr) 100px;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+
+.one {
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  z-index: 100;
+}
+.two {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  z-index: 100;     
+}
+.three {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  z-index: 100;
+}
+.four {
+  grid-column: 4/5;
+  grid-row: 1 / 3;
+  z-index: 100;
+}
+.five {
+  grid-column: 1/5;
+  grid-row: 4;
+  z-index: 100;
+}
+.six {
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+  z-index: 100;
+}
+
+
